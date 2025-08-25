@@ -1,4 +1,5 @@
 use rand::random;
+use crate::font;
 
 pub const SCREEN_WIDTH: usize = 64;
 pub const SCREEN_HEIGHT: usize = 32;
@@ -13,7 +14,7 @@ const START_POS: u16 = 0x200;
 pub struct Processor {
     program_counter: u16,
     ram: [u8; RAM_SIZE],
-    vram: [bool; SREEN_WIDTH * SCREEN_HEIGHT],
+    vram: [bool; SCREEN_WIDTH * SCREEN_HEIGHT],
     v_registers: [u8; REG_LENGTH],
     ram_index: u16,
     stack: [u16; STACK_SIZE], //to remember where we jumped from during a subroutine!
